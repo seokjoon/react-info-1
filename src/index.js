@@ -1,13 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+// import './index.css';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { applyMiddleware, createStore } from 'redux'
+import rootReducer from './redux/ducks'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
+import IndexCom from './com/IndexCom'
+import createMiddlewareSaga from 'redux-saga'
+
+
+const middlewareSaga = createMiddlewareSaga()
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(
+    applyMiddleware(
+      middlewareSaga,
+    ),
+  ),
+)
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <IndexCom />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
