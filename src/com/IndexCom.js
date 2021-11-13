@@ -3,8 +3,7 @@ import React from 'react'
 const IndexCom = () => {
   return (
     <div>
-      <h3>IndexCom</h3>
-      
+      IndexCom
     </div>
   )
 }

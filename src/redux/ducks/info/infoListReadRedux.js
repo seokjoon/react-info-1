@@ -32,6 +32,7 @@ infoListReadRedux.read = createAction(READ, ({ page, }) => ({ page, }))
 
 
 const readSaga = inSaga.createReq(READ, inApi.infoApi.readList)
+
 infoListReadRedux.readSaga = function* () {
   yield takeLatest(READ, readSaga)
 }

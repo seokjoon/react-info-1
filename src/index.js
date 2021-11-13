@@ -4,12 +4,12 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { applyMiddleware, createStore } from 'redux'
-import rootReducer from './redux/ducks'
+import rootReducer, { rootSaga } from './redux/ducks'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import IndexCom from './com/IndexCom'
 import createMiddlewareSaga from 'redux-saga'
+import RouteCom from './com/Route/RouteCom'
 
 
 const middlewareSaga = createMiddlewareSaga()
@@ -23,6 +23,8 @@ const store = createStore(
   ),
 )
 
+middlewareSaga.run(rootSaga)
+
 
 ReactDOM.render(
   // <React.StrictMode>
@@ -30,7 +32,7 @@ ReactDOM.render(
   // </React.StrictMode>,
   <Provider store={store}>
     <BrowserRouter>
-      <IndexCom />
+      <RouteCom />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')
