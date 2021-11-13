@@ -7,13 +7,14 @@ import infoRoute from './infoRoute'
 
 const InRoute = () => {
 
-  const indexRoute = [
-    { path: inConst.path.index, element: <IndexCom /> },
-  ]
+  const indexRoute = {
+    path: inConst.path.index,
+    element: <IndexCom /> ,
+  }
 
   return useRoutes([
-    ...indexRoute,
-    ...infoRoute,
+    indexRoute,
+    infoRoute,
   ])
 }
 
