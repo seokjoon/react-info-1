@@ -1,7 +1,7 @@
 import { createAction, handleActions } from 'redux-actions'
 import inSaga from '../../../helper/inSaga'
-import inApi from '../../../api'
 import { takeLatest } from 'redux-saga/effects'
+import inApi from '../../../api'
 
 
 const READ = 'infoListRead/READ'
@@ -31,7 +31,7 @@ const infoListReadRedux = handleActions({
 infoListReadRedux.read = createAction(READ, ({ page, }) => ({ page, }))
 
 
-const readSaga = inSaga.createReq(READ, inApi.infoApi.readList)
+const readSaga = inSaga.createReq(READ, inApi.info.readList)
 
 infoListReadRedux.readSaga = function* () {
   yield takeLatest(READ, readSaga)

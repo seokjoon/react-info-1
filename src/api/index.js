@@ -2,7 +2,7 @@ import infoApi from './infoApi'
 
 
 const inApi = {
-  infoApi,
+  info: infoApi,
 }
 
 
