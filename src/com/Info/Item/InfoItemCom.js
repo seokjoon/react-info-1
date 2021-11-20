@@ -4,15 +4,17 @@ import { useNavigate } from 'react-router-dom'
 
 const InfoItemCom = ({ content, id, title, }) => {
 
-  const [ form, setForm ] = useState({ foo: '', })
-
-  let nav = useNavigate()
-
-  const onChangeFoo = e => {
-    const nextForm = { ...form, [e.target.name]: e.target.value, }
+  const [ form, setForm ] = useState({ foo: '', bar: '' })
+  const { foo, bar } = form
+  const onChangeForm = e => {
+    const nextForm = {
+      ...form,
+      [e.target.name]: e.target.value,
+    }
     setForm(nextForm)
   }
 
+  let nav = useNavigate()
   const onClickBack = () => {
     nav(-1)
   }
@@ -23,24 +25,22 @@ const InfoItemCom = ({ content, id, title, }) => {
 
   return (
     <div>
-
-      <input type="text" name="foo" onChange={onChangeFoo} />
-
+      <div> <input type="text" name="foo" value={foo} onChange={onChangeForm} /> </div>
+      <div> <input type="text" name="bar" value={bar} onChange={onChangeForm} /> </div>
       <button onClick={onClickBack}>back</button>
-
     </div>
   )
 }
 
 InfoItemCom.defaultProps = {
-  content: '',
-  id: '',
-  title: '',
+  content: 'content',
+  id: 0,
+  title: 'title',
 }
 
 InfoItemCom.propTypes = {
   content: PropTypes.string,
-  id: PropTypes.string,
+  id: PropTypes.number.isRequired,
   title: PropTypes.string,
 }
 
