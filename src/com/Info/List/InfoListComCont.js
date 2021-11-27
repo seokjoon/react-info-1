@@ -1,16 +1,27 @@
-import React, { useState } from 'react'
+import React from 'react'
 import InfoListCom from './InfoListCom'
 
 const InfoListComCont = () => {
 
-  const [renderId, setRenderId] = useState(0)
+  const items = [
+    { content: 'foo', id: 1, title: 'foo', },
+    { content: 'bar', id: 2, title: 'bar', },
+  ]
+
+  const onTouchEnd = (e) => {
+    readItems()
+  }
+
+  const readItems = () => {
+    console.log('readItems')
+  }
 
   return (
-    <div>
+    <div onTouchEnd={onTouchEnd}>
 
-      <button onClick={() => setRenderId(renderId + 1)}>Render</button>
+      <button onClick={readItems}>pull to refresh</button>
 
-      <InfoListCom />
+      <InfoListCom items={items} />
 
     </div>
   )

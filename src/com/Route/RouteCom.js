@@ -4,13 +4,15 @@ import { Link, Outlet, } from 'react-router-dom'
 
 const RouteCom = () => {
 
+  const { index, info, } = inConst.path
+
   return (
     <div>
 
       <div style={{ float: 'left', width: '30%', }}>
         <ul>
-          <li><Link to={inConst.path.index}>Index</Link></li>
-          <li><Link to={inConst.path.info}>info</Link></li>
+          <li><Link to={index}>Index</Link></li>
+          <li><Link to={info}>info</Link></li>
         </ul>
       </div>
 

@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const InfoListItemCom = ({ item }) => {
+const InfoListItemCom = ({ children, item }) => {
 
-  const { children, content, id, title } = item
+  const { content, id, title } = item
 
   return (
     <div className="info-list-item">

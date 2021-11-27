@@ -5,7 +5,11 @@ import { useNavigate } from 'react-router-dom'
 const InfoItemCom = ({ content, id, title, }) => {
 
   const [ form, setForm ] = useState({ foo: '', bar: '' })
+
   const { foo, bar } = form
+
+  let nav = useNavigate()
+
   const onChangeForm = e => {
     const nextForm = {
       ...form,
@@ -14,7 +18,6 @@ const InfoItemCom = ({ content, id, title, }) => {
     setForm(nextForm)
   }
 
-  let nav = useNavigate()
   const onClickBack = () => {
     nav(-1)
   }
