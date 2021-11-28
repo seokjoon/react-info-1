@@ -1,12 +1,12 @@
 import InfoCom from '../com/Info/InfoCom'
 import inConst from '../helper/inConst'
-import InfoItemComCont from '../com/Info/Item/InfoItemComCont'
+import InfoItemCont from '../com/Info/Item/InfoItemCont'
 
 const infoRoute = {
   path: inConst.path.info,
   children: [
     { path: '', element: <InfoCom/> },
-    { path: ':id', element: <InfoItemComCont/> },
+    { path: ':id', element: <InfoItemCont/> },
   ],
 }
 

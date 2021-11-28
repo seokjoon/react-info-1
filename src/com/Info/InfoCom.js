@@ -1,11 +1,11 @@
 import React from 'react'
-import InfoListComCont from './List/InfoListComCont'
+import InfoListCont from './List/InfoListCont'
 
 const InfoCom = () => {
   return (
     <div>
       infoCom
-      <InfoListComCont />
+      <InfoListCont />
     </div>
   )
 }

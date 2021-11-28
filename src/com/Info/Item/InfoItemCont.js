@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import InfoItemCom from './InfoItemCom'
 
-const InfoItemComCont = () => {
+const InfoItemCont = () => {
 
   useEffect(() => {
     console.log('InfoItemComCont')
@@ -17,4 +17,4 @@ const InfoItemComCont = () => {
   )
 }
 
-export default InfoItemComCont
+export default InfoItemCont

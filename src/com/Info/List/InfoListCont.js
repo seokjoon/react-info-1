@@ -1,7 +1,7 @@
 import React from 'react'
 import InfoListCom from './InfoListCom'
 
-const InfoListComCont = () => {
+const InfoListCont = () => {
 
   const items = [
     { content: 'foo', id: 1, title: 'foo', },
@@ -27,4 +27,4 @@ const InfoListComCont = () => {
   )
 }
 
-export default InfoListComCont
+export default InfoListCont
