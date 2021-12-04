@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const InfoListItemCom = ({ children, item }) => {
+const InfoListItemCom = ({ children, item, }) => {
 
   const { content, id, title } = item
 
@@ -35,4 +35,4 @@ InfoListItemCom.propTypes = {
   }),
 }
 
-export default InfoListItemCom
+export default React.memo(InfoListItemCom)
