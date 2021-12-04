@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 // import App from './App';
 import reportWebVitals from './reportWebVitals'
 import { applyMiddleware, createStore } from 'redux'
-import rootReducer, { rootSaga } from './redux/ducks'
+import rootReducer, { rootSaga } from './redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'

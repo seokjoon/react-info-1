@@ -1,7 +1,7 @@
 import { createAction, handleActions } from 'redux-actions'
-import inSaga from '../../../helper/inSaga'
+import inSaga from '../../helper/inSaga'
 import { takeLatest } from 'redux-saga/effects'
-import inApi from '../../../api'
+import inApi from '../../api'
 
 
 const READ = 'infoListRead/READ'

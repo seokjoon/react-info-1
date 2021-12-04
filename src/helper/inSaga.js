@@ -1,4 +1,4 @@
-import inApiLoadingRedux from '../redux/ducks/inApiLoadingRedux'
+import inApiLoadingRedux from '../redux/inApiLoadingRedux'
 import { call, put, } from 'redux-saga/effects'
 
 const inSaga = {

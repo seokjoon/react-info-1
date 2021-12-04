@@ -1,23 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { useNavigate } from 'react-router-dom'
-import useInInputHook from '../../../hook/useInInputHook'
 
-const InfoItemCom = ({ content, id, title, }) => {
-
-  const [state, onChange] = useInInputHook({ foo: '', bar: '', })
-
-  const { foo, bar } = state
-
-  let nav = useNavigate()
-
-  const onClickBack = () => {
-    nav(-1)
-  }
-
-  useEffect(() => {
-    console.log(state)
-  }, [ state ])
+const InfoItemCom = ({ content, id, title, foo, bar, onClickBack, onChange, }) => {
 
   return (
     <div>
