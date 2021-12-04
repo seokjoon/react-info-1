@@ -1,14 +1,14 @@
 import { createAction, handleActions } from 'redux-actions'
 
 
-const START = 'inApiLoading/START'
-const STOP = 'inApiLoading/STOP'
+const START = 'inApiLoad/START'
+const STOP = 'inApiLoad/STOP'
 
 
 const stateInit = {}
 
 
-const inApiLoadingRedux = handleActions({
+const inApiLoadRedux = handleActions({
   [START]: (state, action) => ({
     ...state,
     [action.payload]: true,
@@ -20,15 +20,15 @@ const inApiLoadingRedux = handleActions({
 }, stateInit)
 
 
-inApiLoadingRedux.start = createAction(
+inApiLoadRedux.start = createAction(
   START,
   reqType => reqType,
 )
 
-inApiLoadingRedux.stop = createAction(
+inApiLoadRedux.stop = createAction(
   STOP,
   reqType => reqType,
 )
 
 
-export default inApiLoadingRedux
+export default inApiLoadRedux

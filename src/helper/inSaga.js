@@ -1,4 +1,4 @@
-import inApiLoadingRedux from '../redux/inApiLoadingRedux'
+import inApiLoadRedux from '../redux/inApiLoadRedux'
 import { call, put, } from 'redux-saga/effects'
 
 const inSaga = {
@@ -8,7 +8,7 @@ const inSaga = {
 
     return function*(action) {
 
-      yield put(inApiLoadingRedux.start(type))
+      yield put(inApiLoadRedux.start(type))
 
       try {
         const res = yield call(req, action.payload)
@@ -25,7 +25,7 @@ const inSaga = {
         })
       }
 
-      yield put(inApiLoadingRedux.stop(type))
+      yield put(inApiLoadRedux.stop(type))
     }
   },
 }

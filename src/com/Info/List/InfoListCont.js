@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import InfoListCom from './InfoListCom'
+import { useDispatch, useSelector } from 'react-redux'
+import infoListReadRedux from '../../../redux/info/infoListReadRedux'
 
 const InfoListCont = () => {
 
-  const items = [
-    { content: 'foo', id: 1, title: 'foo', },
-    { content: 'bar', id: 2, title: 'bar', },
-  ]
+  const { error, items, pageLast, } = useSelector(({ infoListReadRedux, }) => ({
+    error: infoListReadRedux.error,
+    items: infoListReadRedux.items,
+    pageLast: infoListReadRedux.pageLast,
+  }))
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(infoListReadRedux.read({ page: 1 }))
+  }, [dispatch])
+
+  // const items = [ { content: 'foo', id: 1, title: 'foo', }, ]
 
   const onTouchEnd = (e) => {
     readItems()
@@ -21,7 +32,7 @@ const InfoListCont = () => {
 
       <button onClick={readItems}>pull to refresh</button>
 
-      <InfoListCom items={items} />
+      <InfoListCom error={error} items={items} pageLast={pageLast} />
 
     </div>
   )
