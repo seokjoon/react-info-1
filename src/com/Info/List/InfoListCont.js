@@ -13,7 +13,7 @@ const InfoListCont = () => {
   }
 
   const readItems = () => {
-    console.log('readItems')
+    console.log('readItems complete')
   }
 
   return (
