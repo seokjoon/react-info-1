@@ -2,6 +2,7 @@ import { handleActions } from 'redux-actions'
 import inThunk from '../../helper/inThunk'
 import inApi from '../../api'
 
+
 const READ = 'infoCatListRead/READ'
 const READ_FAIL = 'infoCatListRead/READ_FAIL'
 const READ_SUCCESS = 'infoCatListRead/READ_SUCCESS'

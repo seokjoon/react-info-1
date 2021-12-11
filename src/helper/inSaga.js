@@ -1,5 +1,6 @@
 import inApiLoadRedux from '../redux/inApiLoadRedux'
 import { call, put, } from 'redux-saga/effects'
+//import { call, put, select, } from 'redux-saga/effects'
 
 const inSaga = {
   createReq: (type, req) => {
@@ -7,18 +8,23 @@ const inSaga = {
     const SUCCESS = `${type}_SUCCESS`
 
     return function*(action) {
+
+      //console.log(yield select(state => state))
+
       yield put(inApiLoadRedux.start(type))
 
-      //console.log('loading inSaga')
-
       try {
+
         const res = yield call(req, action.payload)
+
         yield put({
           meta: res,
           payload: res.data,
           type: SUCCESS,
         })
+
       } catch (e) {
+
         yield put({
           error: true,
           payload: e,
@@ -27,6 +33,7 @@ const inSaga = {
       }
 
       yield put(inApiLoadRedux.stop(type))
+
     }
   },
 }
