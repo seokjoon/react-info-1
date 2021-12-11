@@ -7,8 +7,9 @@ const inSaga = {
     const SUCCESS = `${type}_SUCCESS`
 
     return function*(action) {
-
       yield put(inApiLoadRedux.start(type))
+
+      //console.log('loading inSaga')
 
       try {
         const res = yield call(req, action.payload)

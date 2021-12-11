@@ -10,6 +10,8 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import createMiddlewareSaga from 'redux-saga'
 import InRoute from './route'
+import inMiddleware from './middleware/inMiddleware'
+import ReduxThunk from 'redux-thunk'
 
 const middlewareSaga = createMiddlewareSaga()
 
@@ -17,7 +19,9 @@ const store = createStore(
   rootReducer,
   composeWithDevTools(
     applyMiddleware(
+      inMiddleware,
       middlewareSaga,
+      ReduxThunk,
     ),
   ),
 )

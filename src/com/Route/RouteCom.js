@@ -4,7 +4,7 @@ import { Link, Outlet, } from 'react-router-dom'
 
 const RouteCom = () => {
 
-  const { index, info, } = inConst.path
+  const { index, info, infoCat, } = inConst.path
 
   return (
     <div>
@@ -13,6 +13,7 @@ const RouteCom = () => {
         <ul>
           <li><Link to={index}>Index</Link></li>
           <li><Link to={info}>info</Link></li>
+          <li><Link to={infoCat}>infoCat</Link></li>
         </ul>
       </div>
 

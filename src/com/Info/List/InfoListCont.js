@@ -14,7 +14,7 @@ const InfoListCont = () => {
   }))
 
   const readItems = useCallback(() => {
-    console.log('InfoListCont.readItems')
+    console.log('readItems')
     dispatch(infoListReadRedux.read({ page: 1 }))
   }, [dispatch])
 
