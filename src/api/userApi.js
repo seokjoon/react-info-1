@@ -1,16 +1,16 @@
 import inAxios from '../helper/inAxios'
 
 const userApi = {
-  checkToken: () => inAxios.get('/api/usersCheckToken'),
-  create: ({ password, username, }) => inAxios.post('/api/users', {
+  checkToken: () => inAxios.get('/api/userCheckToken'),
+  create: ({ password, username, }) => inAxios.post('/api/user', {
     password,
     username,
   }),
-  createToken: ({ password, username, }) => inAxios.post('/api/usersCreateToken', {
+  createToken: ({ password, username, }) => inAxios.post('/api/userCreateToken', {
     password,
     username,
   }),
-  destroyToken: () => inAxios.post('/api/usersDestroyToken'),
+  destroyToken: () => inAxios.post('/api/userDestroyToken'),
 }
 
 

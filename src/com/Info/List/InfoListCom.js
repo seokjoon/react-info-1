@@ -4,7 +4,7 @@ import InfoListItemCom from './InfoListItemCom'
 const InfoListCom = ({ error, items, pageLast, }) => {
 
   const outItems = items.map((item) => (
-    <InfoListItemCom item={item} key={item.id}>
+    <InfoListItemCom item={item} key={item._id}>
       child
     </InfoListItemCom>
   ))
