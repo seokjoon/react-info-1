@@ -1,21 +1,21 @@
 import React, { useCallback, useEffect } from 'react'
 import InfoListCom from './InfoListCom'
 import { useDispatch, useSelector } from 'react-redux'
-import infoListReadRedux from '../../../redux/info/infoListReadRedux'
+import infosReadRedux from '../../../redux/info/infosReadRedux'
 
 const InfoListCont = () => {
 
   const dispatch = useDispatch()
 
-  const { error, items, pageLast, } = useSelector(({ infoListReadRedux, }) => ({
-    error: infoListReadRedux.error,
-    items: infoListReadRedux.items,
-    pageLast: infoListReadRedux.pageLast,
+  const { error, items, pageLast, } = useSelector(({ infosReadRedux, }) => ({
+    error: infosReadRedux.error,
+    items: infosReadRedux.items,
+    pageLast: infosReadRedux.pageLast,
   }))
 
   const readItems = useCallback(() => {
     console.log('readItems')
-    dispatch(infoListReadRedux.read({ page: 1 }))
+    dispatch(infosReadRedux.read({ page: 1 }))
   }, [dispatch])
 
   useEffect(() => {

@@ -1,13 +1,13 @@
 import axios from 'axios'
 
 
-const inClient = axios.create()
-inClient.defaults.baseURL = process.env.REACT_APP_HOST_API_INFO
-inClient.defaults.headers.common['Authorization'] = 'Bearer info'
-inClient.defaults.withCredentials = true
+const inAxios = axios.create()
+inAxios.defaults.baseURL = process.env.REACT_APP_HOST_API_INFO
+inAxios.defaults.headers.common['Authorization'] = 'Bearer info'
+inAxios.defaults.withCredentials = true
 
 
-inClient.interceptors.request.use(
+inAxios.interceptors.request.use(
   config => {
     // console.log('config req:', config)
     return config
@@ -18,7 +18,7 @@ inClient.interceptors.request.use(
   },
 )
 
-inClient.interceptors.response.use(
+inAxios.interceptors.response.use(
   res => {
     // console.log('res:', res)
     return res
@@ -30,4 +30,4 @@ inClient.interceptors.response.use(
 )
 
 
-export default inClient
+export default inAxios

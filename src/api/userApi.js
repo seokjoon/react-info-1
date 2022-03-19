@@ -1,16 +1,16 @@
-import inClient from '../helper/inClient'
+import inAxios from '../helper/inAxios'
 
 const userApi = {
-  checkToken: () => inClient.get('/api/usersCheckToken'),
-  create: ({ password, username, }) => inClient.post('/api/users', {
+  checkToken: () => inAxios.get('/api/usersCheckToken'),
+  create: ({ password, username, }) => inAxios.post('/api/users', {
     password,
     username,
   }),
-  createToken: ({ password, username, }) => inClient.post('/api/usersCreateToken', {
+  createToken: ({ password, username, }) => inAxios.post('/api/usersCreateToken', {
     password,
     username,
   }),
-  destroyToken: () => inClient.post('/api/usersDestroyToken'),
+  destroyToken: () => inAxios.post('/api/usersDestroyToken'),
 }
 
 

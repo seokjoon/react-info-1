@@ -1,20 +1,20 @@
 import React, { useCallback, useEffect } from 'react'
 import InfoCatListCom from './InfoCatListCom'
 import { useDispatch, useSelector } from 'react-redux'
-import infoCatListReadRedux from '../../../redux/info/infoCatListReadRedux'
+import infoCatsReadRedux from '../../../redux/info/infoCatsReadRedux'
 
 const InfoCatListCont = () => {
 
   const dispatch = useDispatch()
 
-  const { error, items, } = useSelector(({ infoCatListReadRedux }) => ({
-    error: infoCatListReadRedux.error,
-    items: infoCatListReadRedux.items,
+  const { error, items, } = useSelector(({ infoCatsReadRedux }) => ({
+    error: infoCatsReadRedux.error,
+    items: infoCatsReadRedux.items,
   }))
 
   const readItems = useCallback(() => {
     console.log('readItems')
-    dispatch(infoCatListReadRedux.read({}))
+    dispatch(infoCatsReadRedux.read({}))
   }, [dispatch])
 
   useEffect(() => {

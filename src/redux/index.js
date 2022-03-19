@@ -1,18 +1,19 @@
 import { combineReducers } from 'redux'
 import { all } from 'redux-saga/effects'
-import infoListReadRedux from './info/infoListReadRedux'
-import infoCatListReadRedux from './info/infoCatListReadRedux'
+import infosReadRedux from './info/infosReadRedux'
+import infoCatsReadRedux from './info/infoCatsReadRedux'
 
 
 const rootReducer = combineReducers({
-  infoListReadRedux,
-  infoCatListReadRedux,
+  infosReadRedux,
+  infoCatsReadRedux,
 })
 
 
 export function* rootSaga() {
   yield all([
-    infoListReadRedux.readSaga()
+    infosReadRedux.readSaga(),
+    infoCatsReadRedux.readSaga(),
   ])
 }
 

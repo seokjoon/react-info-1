@@ -4,9 +4,9 @@ import { takeLatest } from 'redux-saga/effects'
 import inApi from '../../api'
 
 
-const READ = 'infoListRead/READ'
-const READ_FAIL = 'infoListRead/READ_FAIL'
-const READ_SUCCESS = 'infoListRead/READ_SUCCESS'
+const READ = 'infosRead/READ'
+const READ_FAIL = 'infosRead/READ_FAIL'
+const READ_SUCCESS = 'infosRead/READ_SUCCESS'
 
 
 const stateInit = {
@@ -16,7 +16,7 @@ const stateInit = {
 }
 
 
-const infoListReadRedux = handleActions({
+const infosReadRedux = handleActions({
   [READ_FAIL]: (state, { payload: error, }) => ({ //params: state, action
     ...state,
     error,
@@ -28,14 +28,14 @@ const infoListReadRedux = handleActions({
   }),
 }, stateInit)
 
-infoListReadRedux.read = createAction(READ, ({ page, }) => ({ page, }))
+infosReadRedux.read = createAction(READ, ({ page, }) => ({ page, }))
 
 
-const readSaga = inSaga.createReq(READ, inApi.info.readList)
+const readSaga = inSaga.createReq(READ, inApi.info.readItems)
 
-infoListReadRedux.readSaga = function* () {
+infosReadRedux.readSaga = function* () {
   yield takeLatest(READ, readSaga)
 }
 
 
-export default infoListReadRedux
+export default infosReadRedux
