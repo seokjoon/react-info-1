@@ -1,5 +1,5 @@
 import React from 'react'
-import inConst from '../helper/inConst'
+import inConstPath from '../helper/inConstPath'
 import { useRoutes } from 'react-router-dom'
 import infoRoute from './infoRoute'
 import RouteCom from '../com/Route/RouteCom'
@@ -9,7 +9,7 @@ import userRoute from './userRoute'
 const InRoute = () => {
 
   const indexRoute = {
-    path: inConst.path.index,
+    path: inConstPath.index,
     element: <RouteCom/>,
     children: [
       infoRoute,

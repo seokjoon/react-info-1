@@ -1,7 +1,7 @@
-import inConst from '../helper/inConst'
+import inConstPath from '../helper/inConstPath'
 
 const userRoute = {
-  path: inConst.path.user,
+  path: inConstPath.user,
   children: [
   ],
 }

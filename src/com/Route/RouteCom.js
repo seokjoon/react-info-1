@@ -1,10 +1,10 @@
 import React from 'react'
-import inConst from '../../helper/inConst'
+import inConstPath from '../../helper/inConstPath'
 import { Link, Outlet, } from 'react-router-dom'
 
 const RouteCom = () => {
 
-  const { index, info, infoCat, } = inConst.path
+  const { index, info, infoCat, } = inConstPath
 
   return (
     <div>
