@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 const inAxios = axios.create()
-inAxios.defaults.baseURL = process.env.REACT_APP_HOST_API_INFO
+inAxios.defaults.baseURL = process.env.REACT_APP_API_HOST + process.env.REACT_APP_API_APP
 inAxios.defaults.headers.common['Authorization'] = 'Bearer info'
 inAxios.defaults.withCredentials = true
 

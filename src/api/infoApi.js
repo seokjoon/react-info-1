@@ -2,11 +2,11 @@ import inAxios from '../helper/inAxios'
 
 
 const infoApi = {
-  deleteItem: (id) => inAxios.delete(`/api/info/${id}`),
-  readCatItems: ({ ...rest }) => inAxios.get(`/api/infoCat`, { params: { ...rest } }),
-  readItem: (id) => inAxios.get(`/api/info/${id}`),
-  readItems: ({ ...rest }) => inAxios.get(`/api/info`, { params: { ...rest } }),
-  updateItem: (id, { ...rest }) => inAxios.put(`/api/info/${id}`, { ...rest }),
+  deleteItem: (id) => inAxios.delete(`/info/${id}`),
+  readCatItems: ({ ...rest }) => inAxios.get(`/infoCat`, { params: { ...rest } }),
+  readItem: (id) => inAxios.get(`/info/${id}`),
+  readItems: ({ ...rest }) => inAxios.get(`/info`, { params: { ...rest } }),
+  updateItem: (id, { ...rest }) => inAxios.put(`/info/${id}`, { ...rest }),
 }
 
 

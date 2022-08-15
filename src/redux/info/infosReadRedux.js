@@ -23,7 +23,8 @@ const infosReadRedux = handleActions({
   }),
   [READ_SUCCESS]: (state, { payload: items, meta: res }) => ({
     ...state,
-    items,
+    //items,
+    items: res.data.data,
     pageLast: parseInt(res.headers['pageLast'], 10),
   }),
 }, stateInit)
