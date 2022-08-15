@@ -1,1 +1,1 @@
-* http://memorobot.com/react-info-1
+* http://info.memorobot.com/app
